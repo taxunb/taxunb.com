@@ -1,0 +1,93 @@
+.waves {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    align-self: end;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-size: 1000px 100px;
+    background-repeat: repeat-x;
+    //background-color: linear-gradient(0deg, var(--cor-background) 0%, rgba(0, 0, 0, 0) 5%);
+    //background-color: linear-gradient(0deg, red 0%, rgba(0, 0, 0, 0) 5%);
+
+    background-image: url("img/wave1400.png");
+
+    @media (min-width: 576px) {
+        background-image: url("img/wave576.png");
+    }
+
+    @media (min-width: 768px) {
+        background-image: url("img/wave768.png");
+    }
+
+    @media (min-width: 992px) {
+        background-image: url("img/wave992.png");
+    }
+
+    @media (min-width: 1200px) {
+        background-image: url("img/wave1200.png");
+    }
+
+    @media (min-width: 1400px) {
+        background-image: url("img/wave1400.png");
+    }
+}
+
+#wave1 {
+    animation: waveAnimationR 30s linear infinite;
+    z-index: 15;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: -5px;
+}
+
+#wave2 {
+    animation: waveAnimationL 20s linear infinite;
+    z-index: 14;
+    opacity: .2;
+    animation-delay: -2s;
+    bottom: 10px;
+}
+
+#wave3 {
+    animation: waveAnimationR 15s linear infinite;
+    z-index: 13;
+    opacity: .5;
+    animation-delay: -5s;
+    bottom: 5px;
+}
+
+#wave4 {
+    animation: waveAnimationL 10s linear infinite;
+    z-index: 12;
+    opacity: .7;
+    animation-delay: -5s;
+    bottom: 15px;
+}
+
+@keyframes waveAnimationR {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes waveAnimationL {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
+}

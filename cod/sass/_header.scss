@@ -1,0 +1,104 @@
+#header {
+    background-color: var(--cor-amareloPuro);
+    position: fixed;
+    min-width: 100vw;
+    padding: 0 10px;
+    z-index: 1000;
+
+    &>div {
+        display: grid;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-areas: "gArea_Logo gArea_Menu gArea_Soci";
+
+        @media (max-width: 991px) {
+            grid-template-areas:
+                "gArea_Logo gArea_Soci"
+                "gArea_Menu gArea_Menu";
+        }
+    }
+}
+
+#navbarLogo {
+    grid-area: gArea_Logo;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: var(--cor-preto);
+    font-size: 2rem;
+}
+
+#headerNav {
+    grid-area: gArea_Menu;
+    align-self: end;
+    display: flex;
+    align-items: flex-end;
+    color: var(--cor-preto);
+    flex-direction: row;
+
+    @media (max-width: 450px) {
+        flex-wrap: wrap;
+        height: auto;
+        margin-bottom: .5rem;
+    }
+}
+
+#headerNav a {
+    margin: 0 .5em;
+    padding: .35em 5px;
+    color: inherit;
+    font-size: 1.15rem;
+    font-weight: 650;
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 0.3em solid rgba(0, 0, 0, 0);
+
+    @media (max-width: 450px) {
+        margin: .3em 0.5em;
+        padding: 0;
+        border: none;
+
+        &:hover {
+            color: var(--cor-destaque);
+        }
+    }
+
+    &[ativo="on"] {
+        border-color: black;
+        color: black;
+    }
+
+    &:hover {
+        border-color: var(--cor-amareloMedio15);
+    }
+
+    &:active {
+        color: black;
+        border-color: black;
+    }
+}
+
+#headerRedeSociais {
+    grid-area: gArea_Soci;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    margin-top: 0.5em;
+
+    a {
+        text-align: center;
+        padding: 0.25em .5em;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--cor-preto);
+
+        &:hover {
+            color: var(--cor-amareloPuro15)
+        }
+
+        & div:last-child {
+            margin-top: -0.25em
+        }
+    }
+}
